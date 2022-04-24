@@ -22,3 +22,4 @@ python3 train.py --batch-size 32 --epochs 50 --wandb-project <project-name>
 ![uiimage](img/img_ui.png)
 
 ### Dockerize
+
