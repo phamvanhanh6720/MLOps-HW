@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  api:
+    image: phamvanhanh6720/finetunecifar100-api:latest
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"
+
+  app:
+    image: phamvanhanh6720/finetunecifar100-app:latest
+    expose:
+      - "8501"
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api

@@ -4,7 +4,6 @@ import requests
 from PIL import Image
 
 import streamlit as st
-from annotated_text import annotated_text
 
 hostname = 'http://localhost:8000'
 
