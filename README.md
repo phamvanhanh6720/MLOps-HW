@@ -22,7 +22,7 @@ python3 train.py --batch-size 32 --epochs 50 --wandb-project <project-name>
 ![uiimage](img/img_ui.png)
 
 ### Dockerize
-* I dockerized the service to redeploy on GCP VM instances.
+* I dockerized the service to easily redeploy on GCP VM instances.
 * [Backend Dockerfile](docker/api/Dockerfile)
 * [Frontend Dockerfile](docker/api/Dockerfile)
 * [docker-compose file](docker-compose.yml)
