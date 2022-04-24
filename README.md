@@ -15,11 +15,16 @@ python3 train.py --batch-size 32 --epochs 50 --wandb-project <project-name>
 <img src="img/img.png"/>
 
 ### Deploy
-* I use FastAPI to serve my model and use [streamlit](https://streamlit.io/) to quickly build UI.
+* I used FastAPI to serve my model and designed basic frontend by [streamlit](https://streamlit.io/).
 * API docs:
 ![img.png](img/img_api.png)
-* UI:
+* FE:
 ![uiimage](img/img_ui.png)
 
 ### Dockerize
-
+* I dockerized the service to redeploy on GCP VM instances.
+* [Backend Dockerfile](docker/api/Dockerfile)
+* [Frontend Dockerfile](docker/api/Dockerfile)
+* [docker-compose file](docker-compose.yml)
+* Instance Monitoring:
+![instance](img/img_gcp.png)
