@@ -1,3 +1,5 @@
+from argparse import ArgumentParser
+
 import torch
 import wandb
 import pytorch_lightning as pl
@@ -14,11 +16,18 @@ warnings.filterwarnings("ignore")
 
 if __name__ == '__main__':
 
+    args = ArgumentParser()
+    args.add_argument('--batch-size', default=32, type=int)
+    args.add_argument('--epochs', default=50, type=int)
+    args.add_argument('--wandb-project', default='mlops_finetune_cifar100', type=str)
+
+    args = args.parse_args()
+
     pl.seed_everything(43)
-    wandb_logger = WandbLogger(project='mlops_finetune_cifar100', job_type='train')
+    wandb_logger = WandbLogger(project=args['wandb_project'], job_type='train')
 
     dm = DatasetModule(
-        batch_size=32
+        batch_size=args['batch_size']
     )
     model = Cifar100Model()
 
@@ -34,7 +43,7 @@ if __name__ == '__main__':
 
     AVAIL_GPUS = min(1, torch.cuda.device_count())
 
-    trainer = pl.Trainer(max_epochs=50,
+    trainer = pl.Trainer(max_epochs=args['epochs'],
                          gpus=AVAIL_GPUS,
                          logger=wandb_logger,
                          callbacks=[checkpoint_callback, early_stop_callback])

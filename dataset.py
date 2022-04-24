@@ -59,3 +59,10 @@ class DatasetModule(LightningDataModule, ABC):
             batch_size=self.hparams.batch_size,
             shuffle=True
         )
+
+
+if __name__ == '__main__':
+    dm = DatasetModule()
+    dm.setup()
+
+    print(dm.test_dataset.classes)

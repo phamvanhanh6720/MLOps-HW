@@ -1,0 +1,3 @@
+api:
+  cuda: False
+  weights:  https://drive.google.com/uc?export=download&confirm=pbef&id=1mku7WEG5ntNSYLI0ogg00nFungWi5OZf
