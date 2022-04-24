@@ -5,7 +5,7 @@ from PIL import Image
 
 import streamlit as st
 
-hostname = 'http://0.0.0.0:8000'
+hostname = 'http://api:8000'
 
 st.header('Image classification')
 uploaded_file = st.file_uploader("Choose a file")
